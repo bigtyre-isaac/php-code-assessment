@@ -1,0 +1,21 @@
+services:
+  website:
+    build: ./website/
+    volumes:
+      - "./website/src/:/var/www/"
+    ports:
+      - 8000:80
+
+  database:
+    build: ./mysql/
+    volumes:
+      - ./mysql/scripts/init.sql:/docker-entrypoint-initdb.d/1.sql
+      - db:/var/lib/mysql
+    ports:
+      - 3310:3306  # Exposed so we can connect to it from outside. Could remove this.
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    
+volumes:
+  db: {}
+

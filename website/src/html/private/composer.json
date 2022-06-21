@@ -1,0 +1,13 @@
+{
+    "name": "isaac/src",
+    "authors": [
+        {
+            "name": "Isaac Osment",
+            "email": "isaac@bigtyre.com.au"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4",
+        "sergeytsalkov/meekrodb": "^2.4"
+    }
+}
